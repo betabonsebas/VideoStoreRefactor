@@ -22,12 +22,12 @@ class VideoStoreTests: XCTestCase {
     
     override func setUp() {
         statement = Statement(customerName: "Customer")
-        newReleaseMovie1 = Movie(title: "New Release 1", priceCode: .newRelease)
-        newReleaseMovie2 = Movie(title: "New Release 2", priceCode: .newRelease)
-        childrensMovie = Movie(title: "Childrens", priceCode: .childrens)
-        regularMovie1 = Movie(title: "Regular Movie 1", priceCode: .regular)
-        regularMovie2 = Movie(title: "Regular Movie 2", priceCode: .regular)
-        regularMovie3 = Movie(title: "Regular Movie 3", priceCode: .regular)
+        newReleaseMovie1 = NewReleaseMovie(title: "New Release 1")
+        newReleaseMovie2 = NewReleaseMovie(title: "New Release 2")
+        childrensMovie = ChildrensMovie(title: "Childrens")
+        regularMovie1 = RegularMovie(title: "Regular Movie 1")
+        regularMovie2 = RegularMovie(title: "Regular Movie 2")
+        regularMovie3 = RegularMovie(title: "Regular Movie 3")
     }
 
     func testSingleNewReleaseStatementTotals() {

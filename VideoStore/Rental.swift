@@ -17,16 +17,8 @@ class Rental {
         self.daysRented = daysRented
     }
     
-    var getDaysRented: Int {
-        return daysRented
-    }
-    
-    var getMovie: Movie {
-        return movie
-    }
-    
     var getTitle: String {
-        return movie.getTitle
+        return movie.title
     }
     
     func determineAmount() -> Double {
