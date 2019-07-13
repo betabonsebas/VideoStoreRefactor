@@ -15,7 +15,7 @@
 		24396FBA22D931EE00209AB2 /* VideoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24396FB922D931EE00209AB2 /* VideoStoreTests.swift */; };
 		24396FC522D9334C00209AB2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24396FC422D9334C00209AB2 /* Movie.swift */; };
 		24396FC722D9336200209AB2 /* Rental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24396FC622D9336200209AB2 /* Rental.swift */; };
-		24396FC922D9337800209AB2 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24396FC822D9337800209AB2 /* Customer.swift */; };
+		24396FC922D9337800209AB2 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24396FC822D9337800209AB2 /* Statement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 		24396FBB22D931EE00209AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24396FC422D9334C00209AB2 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		24396FC622D9336200209AB2 /* Rental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rental.swift; sourceTree = "<group>"; };
-		24396FC822D9337800209AB2 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		24396FC822D9337800209AB2 /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 				24396FB022D931EE00209AB2 /* Info.plist */,
 				24396FC422D9334C00209AB2 /* Movie.swift */,
 				24396FC622D9336200209AB2 /* Rental.swift */,
-				24396FC822D9337800209AB2 /* Customer.swift */,
+				24396FC822D9337800209AB2 /* Statement.swift */,
 			);
 			path = VideoStore;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24396FA722D931DF00209AB2 /* ViewController.swift in Sources */,
-				24396FC922D9337800209AB2 /* Customer.swift in Sources */,
+				24396FC922D9337800209AB2 /* Statement.swift in Sources */,
 				24396FC722D9336200209AB2 /* Rental.swift in Sources */,
 				24396FA522D931DF00209AB2 /* AppDelegate.swift in Sources */,
 				24396FC522D9334C00209AB2 /* Movie.swift in Sources */,
