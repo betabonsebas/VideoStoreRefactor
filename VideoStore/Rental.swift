@@ -24,4 +24,17 @@ class Rental {
     var getMovie: Movie {
         return movie
     }
+    
+    var getTitle: String {
+        return movie.getTitle
+    }
+    
+    func determineAmount() -> Double {
+        return movie.determineAmount(daysRented: daysRented)
+    }
+    
+    func determineFrequentRenterPoints() -> Int {
+        return movie.determineFrequentRenterPoints(daysRented: daysRented)
+    }
+    
 }

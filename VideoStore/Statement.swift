@@ -27,46 +27,44 @@ class Statement {
     }
     
     func generate() -> String {
+        clearTotals()
+        var statementText = header()
+        statementText += rentalLines()
+        statementText += footer()
+        return statementText
+    }
+    
+    private func clearTotals() {
         totalAmount = 0
         frequentRenterPoints = 0
-        var result = "Rental Record for " + getCustomerName + "\n"
-        
-        for each in rentals {
-            var thisAmount: Double = 0
-            
-            //determine amounts for each line
-            switch each.getMovie.getPriceCode {
-            case .regular:
-                thisAmount += 2
-                if each.getDaysRented > 2 {
-                    thisAmount += Double(each.getDaysRented - 2) * 1.5
-                }
-            case .childrens:
-                thisAmount += 1.5
-                if each.getDaysRented > 3 {
-                    thisAmount += Double(each.getDaysRented - 3) * 1.5
-                }
-            case .newRelease:
-                thisAmount += Double(each.getDaysRented * 3)
-            }
-            
-            // add frequent renter points
-            frequentRenterPoints! += 1;
-            
-            // add bonus for a two day new release rental
-            if case MovieType.newRelease = each.getMovie.getPriceCode, each.getDaysRented > 1 {
-                frequentRenterPoints = frequentRenterPoints! + 1
-            }
-            
-            //show figures for this rental
-            result += "\t" + each.getMovie.getTitle + "\t" + String(thisAmount) + "\n"
-            totalAmount! += thisAmount
+    }
+    
+    private func header() -> String {
+        return "Rental Record for \(customerName)\n"
+    }
+    
+    private func rentalLines() -> String {
+        var rentalLines = ""
+        for rental in rentals {
+            rentalLines += rentalLine(rental)
         }
+        return rentalLines
+    }
+    
+    private func rentalLine(_ rental: Rental) -> String {
+        let rentalAmount: Double = rental.determineAmount()
+        frequentRenterPoints! += rental.determineFrequentRenterPoints()
+        totalAmount! += rentalAmount
         
-        //add footer lines
-        result += "Amount owed is " + String(getTotal()) + "\n"
-        result += "You earned " + String(getFrequentRenterPoints()) + " frequent renter points"
-        return result
+        return formatRentalLine(rental: rental, rentalAmount)
+    }
+    
+    fileprivate func formatRentalLine(rental: Rental, _ rentalAmount: Double) -> String {
+        return  "\t\(rental.getTitle)\t\(rentalAmount)\n"
+    }
+    
+    private func footer() -> String {
+        return "Amount owed is \(totalAmount ?? 0.0)\nYou earned \(frequentRenterPoints ?? 0) frequent renter points"
     }
     
     func getTotal() -> Double {

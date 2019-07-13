@@ -33,4 +33,32 @@ class Movie {
         return title
     }
     
+    func determineAmount(daysRented: Int) -> Double {
+        var rentalAmount: Double = 0
+        
+        switch getPriceCode {
+        case .regular:
+            rentalAmount += 2
+            if daysRented > 2 {
+                rentalAmount += Double(daysRented - 2) * 1.5
+            }
+        case .childrens:
+            rentalAmount += 1.5
+            if daysRented > 3 {
+                rentalAmount += Double(daysRented - 3) * 1.5
+            }
+        case .newRelease:
+            rentalAmount += Double(daysRented * 3)
+        }
+        return rentalAmount
+    }
+    
+    func determineFrequentRenterPoints(daysRented: Int) -> Int {
+        let bonusIsEarned = (getPriceCode == MovieType.newRelease && daysRented > 1)
+        if bonusIsEarned {
+            return 2
+        }
+        return 1
+    }
+    
 }
